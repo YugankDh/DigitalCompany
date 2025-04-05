@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>DigitalCo - Transform Your Digital Presence</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script> 
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css" />
 </head>
 
 <body>
     <nav class="nav">
+        <div class="checkbtn">
+            <i class="fa-solid fa-bars fa-lg" style="color: #5146e5" onclick="Menu()"></i>
+        </div>
         <div class="logo">DigitalCo</div>
         <div class="links">
             <ul>
@@ -80,9 +83,9 @@
                 business to the next level
             </div>
         </div>
-        <div class="card-frame" >
-            <div class="card" >
-                <div class="middle-container" data-aos="fade-right">
+        <div class="card-frame">
+            <div class="card">
+                <div class="middle-container" data-aos="fade-up">
                     <div class="icon-frame">
                         <i class="fas fa-globe" style="color: #4f46e5"></i>
                     </div>
@@ -95,7 +98,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="middle-container" data-aos="fade-right">
+                <div class="middle-container" data-aos="fade-up">
                     <div class="icon-frame">
                         <i class="fas fa-mobile-alt" style="color: #4f46e5"></i>
                     </div>
@@ -108,7 +111,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="middle-container" data-aos="fade-left">
+                <div class="middle-container" data-aos="fade-up">
                     <div class="icon-frame">
                         <i class="fas fa-code" style="color: #4f46e5"></i>
                     </div>
@@ -121,7 +124,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="middle-container" data-aos="fade-left">
+                <div class="middle-container" data-aos="fade-up">
                     <div class="icon-frame">
                         <i class="fas fa-chart-line" style="color: #4f46e5"></i>
                     </div>
@@ -138,7 +141,7 @@
 
     <section class="sec3">
         <div class="sec3-frame">
-            <div class="sec3-image" ></div>
+            <div class="sec3-image"></div>
             <div class="sec3-text">
                 <div class="sec3-title">Why Choose Us?</div>
                 <div class="feature-container" data-aos="fade-up">
@@ -220,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sec4-image" > </div>
+            <div class="sec4-image"></div>
         </div>
     </section>
 
@@ -272,19 +275,32 @@
     <script>
         AOS.init()
         // Initialize Lenis
-    // Initialize Lenis
         const lenis = new Lenis({
             duration: 2,
-        });
+        })
 
         // Use requestAnimationFrame to continuously update the scroll
         function raf(time) {
-            lenis.raf(time);
-             requestAnimationFrame(raf);
+            lenis.raf(time)
+            requestAnimationFrame(raf)
         }
 
-        requestAnimationFrame(raf);
+        requestAnimationFrame(raf)
+        const link = document.querySelector(".links")
+        const bar = document.querySelector(".checkbtn i")
+        const links = document.querySelector(".links ")
 
+        function Menu() {
+            if (link.style.left == "-100vw") {
+                link.style.left = "0"
+                bar.classList.remove("fa-bars")
+                bar.classList.add("fa-xmark")
+            } else {
+                link.style.left = "-100vw"
+                bar.classList.remove("fa-xmark")
+                bar.classList.add("fa-bars")
+            }
+        }
     </script>
 </body>
 

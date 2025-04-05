@@ -129,7 +129,7 @@ body {
 .buttons {
     margin-top: 1rem;
     /* background: #000; */
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
 }
